@@ -32,7 +32,7 @@ O projeto simula um cenário real de tarefas manuais repetitivas, como cadastros
 
 ## 🎥 Demonstração
 
-![Demonstração da automação](aula-1/demo.gif)
+![Demonstração da automação](demo.gif)
 
 ---
 
