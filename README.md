@@ -32,7 +32,7 @@ O projeto simula um cenário real de tarefas manuais repetitivas, como cadastros
 
 ## 🎥 Demonstração
 
-[https://github.com/LeticiaAvelar/jornada-python/aula-1/demo.gif](https://github.com/LeticiaAvelar/jornada-python/blob/main/aula-1/demo.gif)
+![Demonstração da automação](aula-1/demo.gif)
 
 ---
 
