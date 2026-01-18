@@ -2,13 +2,6 @@
 # pyautogui = Biblioteca para automação de tarefas no computador
 # pip install pyautogui # Comando para instalar a biblioteca pyautogui
 
-# Passo a passo do meu programa
-# Passo 1: Entrar no sistema da empresa
-# Passo 2: Fazer o login com meu usuário e senha
-# Passo 3: Abrir a base de dados de produtos (importar a base de dados para o meu programa)
-# Passo 4: Adicionar um novo produto à base de dados
-# Passo 5: Repetir o passo 4 para cada novo produto até acabar a lista
-
 import pyautogui
 import time
 
@@ -22,7 +15,7 @@ pyautogui.press("enter")
 
 pyautogui.write(link)
 pyautogui.press("enter")
-time.sleep(2)  # Espera o navegador abrir
+time.sleep(1)  # Espera o navegador abrir
 
 # Passo 2: Fazer o login com meu usuário e senha
 pyautogui.click(x=705, y=407)  # Clica no campo de usuário
@@ -31,7 +24,7 @@ pyautogui.press("tab")  # Vai para o campo de senha
 pyautogui.write("Hashtag@1234")  # Digita a senha
 pyautogui.press("tab")  # Vai para o botão de login
 pyautogui.press("enter")  # Clica no botão de login
-time.sleep(2)  # Espera a página carregar
+time.sleep(1)  # Espera a página carregar
 
 # Passo 3: Abrir a base de dados de produtos (importar a base de dados para o meu programa)
 # pip install pandas openpyxl # Comando para instalar as bibliotecas pandas e openpyxl que permitem manipular arquivos Excel
