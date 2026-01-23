@@ -91,11 +91,15 @@ Análise das colunas, tipos de dados e identificação de informações irreleva
 
 Criação de gráficos para entender como cada variável impacta o cancelamento dos clientes.
 
+---
+
 ## 📈 Principais insights encontrados
 
 - Clientes com contrato mensal apresentaram taxa de cancelamento muito alta
 - Clientes que ligaram mais de 4 vezes para o call center tendem a cancelar
 - Clientes com mais de 20 dias de atraso no pagamento também cancelaram em massa
+
+---
 
 ## 💡 Ações simuladas para reduzir cancelamentos
 
@@ -105,9 +109,13 @@ Com base nos dados, foram simuladas as seguintes ações:
 - Criar políticas para resolver atrasos em até 10 dias
 - Após aplicar esses filtros, a taxa de cancelamento foi significativamente reduzida
 
+---
+
 ## 🎥 Demonstração
 
-![Análise de dados](aula-2/demo.gif)
+![Análise de Dados](demo.gif)
+
+---
 
 ## 📌 Observações
 
@@ -115,9 +123,12 @@ Com base nos dados, foram simuladas as seguintes ações:
 - Base de dados utilizada apenas para estudo
 - Análise realizada com abordagem exploratória
 
+---
+
 ## 📚 Aprendizados
 
 - Importância da limpeza dos dados
 - Como dados mal tratados afetam análises
 - Uso de gráficos para apoiar decisões
 - Transformar dados em ações de negócio
+
