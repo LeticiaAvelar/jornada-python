@@ -61,11 +61,13 @@ Instale as bibliotecas necessárias:
 
 ```bash
 pip install pandas openpyxl ipykernel nbformat plotly
-´´´
+```
 
 ⚠️ O uso de display() e gráficos interativos funciona corretamente em Jupyter Notebook (.ipynb).
 
-🔎 Etapas da análise
+---
+
+## 🔎 Etapas da análise
 1️⃣ Importação da base de dados
 
 Leitura do arquivo CSV contendo informações dos clientes.
@@ -89,13 +91,13 @@ Análise das colunas, tipos de dados e identificação de informações irreleva
 
 Criação de gráficos para entender como cada variável impacta o cancelamento dos clientes.
 
-📈 Principais insights encontrados
+## 📈 Principais insights encontrados
 
 - Clientes com contrato mensal apresentaram taxa de cancelamento muito alta
 - Clientes que ligaram mais de 4 vezes para o call center tendem a cancelar
 - Clientes com mais de 20 dias de atraso no pagamento também cancelaram em massa
 
-💡 Ações simuladas para reduzir cancelamentos
+## 💡 Ações simuladas para reduzir cancelamentos
 
 Com base nos dados, foram simuladas as seguintes ações:
 - Incentivar planos anuais e trimestrais
@@ -103,17 +105,17 @@ Com base nos dados, foram simuladas as seguintes ações:
 - Criar políticas para resolver atrasos em até 10 dias
 - Após aplicar esses filtros, a taxa de cancelamento foi significativamente reduzida
 
-🎥 Demonstração
+## 🎥 Demonstração
 
 ![Análise de dados](aula-2/demo.gif)
 
-📌 Observações
+## 📌 Observações
 
 - Projeto com foco educacional
 - Base de dados utilizada apenas para estudo
 - Análise realizada com abordagem exploratória
 
-📚 Aprendizados
+## 📚 Aprendizados
 
 - Importância da limpeza dos dados
 - Como dados mal tratados afetam análises
