@@ -47,7 +47,7 @@ Neste projeto, realizei:
 
 📦 aula-2
 
-┣ 📄 analise_cancelamentos.ipynb
+┣ 📄 inicial.ipynb
 
 ┣ 📄 cancelamentos.csv
 
@@ -131,4 +131,5 @@ Com base nos dados, foram simuladas as seguintes ações:
 - Como dados mal tratados afetam análises
 - Uso de gráficos para apoiar decisões
 - Transformar dados em ações de negócio
+
 
