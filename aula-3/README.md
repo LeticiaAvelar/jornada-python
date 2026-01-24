@@ -1,19 +1,21 @@
 # 🤖 Jornada Python — Aula 3 | Projeto de Previsão com Machine Learning
 
-Projeto desenvolvido durante a **Aula 3 da Jornada Python** do canal **Hashtag Treinamentos**, com foco em **Machine Learning e modelos de previsão**.
+Projeto desenvolvido durante a **Aula 3 da Jornada Python** do canal **Hashtag Treinamentos**, com foco em **Machine Learning aplicado a problemas de negócio**.
 
-Nesta aula, o objetivo foi entender o **fluxo completo de um projeto de ML**, desde a preparação dos dados até a avaliação de diferentes modelos e a escolha da melhor solução.
+Nesta aula, o objetivo foi construir um **modelo de Inteligência Artificial** capaz de analisar dados de clientes e **prever automaticamente o score de crédito**.
 
 ---
 
 ## 🧠 Contexto do projeto
 
-O projeto tem como objetivo construir um **modelo de previsão**, avaliando diferentes algoritmos de Machine Learning para identificar qual apresenta o melhor desempenho para o problema proposto.
+### Case — Score de Crédito dos Clientes
 
-A abordagem segue um cenário real de dados, onde:
-- não existe um único modelo ideal
-- é necessário testar, comparar e validar resultados
-- decisões são tomadas com base em métricas
+Um banco precisa definir o **score de crédito** de seus clientes para apoiar decisões financeiras.  
+O desafio foi criar um modelo que, a partir das informações do cliente, consiga classificá-lo como:
+
+- **Ruim**
+- **Ok**
+- **Bom**
 
 ---
 
@@ -21,12 +23,14 @@ A abordagem segue um cenário real de dados, onde:
 
 Neste projeto, realizei:
 
-- Preparação e organização da base de dados
-- Separação entre dados de treino e teste
-- Treinamento de múltiplos modelos de Machine Learning
-- Avaliação comparativa entre os modelos
-- Seleção do modelo com melhor desempenho
-- Geração de previsões finais com o modelo escolhido
+- Leitura e exploração da base de dados
+- Tratamento e preparação dos dados para Machine Learning
+- Conversão de variáveis categóricas em numéricas
+- Separação da base em treino e teste
+- Criação e treinamento de múltiplos modelos de ML
+- Avaliação da performance dos modelos
+- Escolha do melhor modelo
+- Previsão do score de novos clientes
 
 ---
 
@@ -34,8 +38,9 @@ Neste projeto, realizei:
 
 - **Python**
 - **Pandas** → manipulação de dados
-- **Scikit-learn** → criação, treino e avaliação dos modelos
-- **Jupyter Notebook** → experimentação e análise
+- **Scikit-learn** → modelos de Machine Learning e métricas
+- **LightGBM** → modelo baseado em gradient boosting
+- **Jupyter Notebook** → desenvolvimento e análise
 
 ---
 
@@ -43,11 +48,14 @@ Neste projeto, realizei:
 
 📦 aula-3
 
-┣ 📄 modelo_previsao.ipynb
+┣ 📄 modelo_score_credito.ipynb
 
-┣ 📄 dados.csv
+┣ 📄 clientes.csv
+
+┣ 📄 novos_clientes.csv
 
 ┗ 📄 README.md
+
 
 ---
 
@@ -56,63 +64,67 @@ Neste projeto, realizei:
 Instale as bibliotecas necessárias:
 
 ```bash
-pip install pandas scikit-learn
+pip install pandas scikit-learn lightgbm
 ```
 
-⚠️ Projeto desenvolvido em ambiente de estudo, utilizando Jupyter Notebook.
+⚠️ O projeto foi desenvolvido em Jupyter Notebook, utilizando display() para visualização dos dados.
 
 ---
 
-## 🔍 Etapas do projeto
-1️⃣ Preparação dos dados
-- Leitura da base de dados
-- Separação entre variáveis explicativas e variável alvo
+## 🔎 Etapas do projeto
+1️⃣ Entendimento do problema
+- Definição do objetivo: prever o score de crédito do cliente com base em seus dados.
 
-2️⃣ Treinamento dos modelos
-- Teste de diferentes algoritmos de Machine Learning
-- Ajuste dos modelos com dados de treino
+2️⃣ Preparação dos dados
+- Leitura da base de clientes
+- Análise dos tipos de dados
+- Transformação de variáveis categóricas em numéricas usando LabelEncoder
+- Remoção de colunas irrelevantes (id_cliente)
 
-3️⃣ Avaliação
-- Comparação dos modelos utilizando métricas de desempenho
-- Análise dos resultados para escolha do melhor modelo
+3️⃣ Separação de dados
+- x → variáveis de entrada
+- y → variável alvo (score_credito)
+- Divisão da base em treino e teste
 
-4️⃣ Previsões finais
-- Aplicação do modelo escolhido
-- Geração das previsões finais
+4️⃣ Criação dos modelos de Machine Learning
+Foram testados três modelos:
+- Random Forest (Árvore de Decisão)
+- K-Nearest Neighbors (KNN)
+- LightGBM (LGBMClassifier)
+
+5️⃣ Avaliação dos modelos
+- Os modelos foram comparados utilizando a métrica de acurácia.
+- O modelo com melhor desempenho foi o Random Forest, sendo escolhido para uso final.
+
+6️⃣ Previsão de novos clientes
+Após a escolha do melhor modelo:
+- Os dados de novos clientes foram tratados
+- O modelo realizou a previsão automática do score de crédito
+
+---
+
+## 📈 Resultado
+
+- O modelo final foi capaz de:
+- Classificar clientes como Ruim, Ok ou Bom
+- Automatizar a análise de crédito
+- Apoiar decisões financeiras de forma escalável
 
 ---
 
-## 📊 Avaliação dos modelos
-
-Foram avaliados múltiplos modelos de IA, comparando desempenho para identificar a melhor solução para o problema proposto.
-
-A escolha do modelo final foi baseada em:
-- desempenho
-- consistência dos resultados
-- capacidade de generalização
-
----
-
-## 🎯 Resultado final
-
-Ao final do projeto:
-- foi selecionado o modelo com melhor performance
-- o modelo escolhido foi utilizado para gerar previsões finais
-- o projeto simulou um fluxo real de Machine Learning aplicado a dados
-
----
 
 ## 📌 Observações
 
-- Projeto com foco educacional
-- Modelos avaliados apenas para fins de aprendizado
-- Resultados não representam um cenário produtivo real
+- Projeto com fins educacionais
+- Base de dados utilizada apenas para estudo
+- Abordagem introdutória a Machine Learning
 
 ---
 
 ## 📚 Aprendizados
 
-- Diferença entre treinar e avaliar modelos
-- Importância de testar mais de um algoritmo
-- Uso de métricas para tomada de decisão
-- Fluxo completo de um projeto de Machine Learning
+- Preparação de dados para IA
+- Importância da codificação de variáveis categóricas
+- Comparação entre diferentes modelos de ML
+- Avaliação de modelos com métricas
+- Aplicação prática de Machine Learning em negócios
