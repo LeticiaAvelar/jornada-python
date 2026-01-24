@@ -48,7 +48,7 @@ Neste projeto, realizei:
 
 📦 aula-3
 
-┣ 📄 modelo_score_credito.ipynb
+┣ 📄 inicial.ipynb
 
 ┣ 📄 clientes.csv
 
@@ -127,4 +127,5 @@ Após a escolha do melhor modelo:
 - Importância da codificação de variáveis categóricas
 - Comparação entre diferentes modelos de ML
 - Avaliação de modelos com métricas
+
 - Aplicação prática de Machine Learning em negócios
