@@ -48,9 +48,11 @@ O projeto simula um cenário real de tarefas manuais repetitivas, como cadastros
 
 📦 automacao-aula1
 
-┣ 📄 dados.csv # Arquivo com os itens a serem cadastrados
+┣ 📄 codigo.py
 
-┣ 📄 automacao.py # Script principal de automação
+┣ 📄 posicao_mouse.py
+
+┣ 📄 produtos.csv
 
 ┗ 📄 README.md
 
