@@ -42,8 +42,11 @@ Neste projeto, realizei:
 ## 📂 Estrutura do projeto
 
 📦 aula-3
+
 ┣ 📄 modelo_previsao.ipynb
+
 ┣ 📄 dados.csv
+
 ┗ 📄 README.md
 
 ---
