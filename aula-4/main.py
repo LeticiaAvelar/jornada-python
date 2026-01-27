@@ -19,6 +19,14 @@
     # pip install streamlit openai
 
 import streamlit as st
+import google.generativeai as genai
+
+genai.configure(api_key="AIzaSyAVeS-BmTDCIbFwNyfpM2KmNJLcmkDcNDw")
+
+# for model in genai.list_models():
+#     print(model.name, model.supported_generation_methods) # mostra os modelos disponíveis na API do Gemini
+
+model = genai.GenerativeModel("models/gemini-flash-latest")
 
 st.title("Fala que eu te escuto")
 
@@ -28,27 +36,33 @@ st.title("Fala que eu te escuto")
 if not "lista_mensagem" in st.session_state:
     st.session_state["lista_mensagem"] = [] # cria uma lista de mensagem vazia APENAS na primeira vez que o app for carregado
 
+for mensagem in st.session_state["lista_mensagem"]:
+    st.chat_message(mensagem["role"]).write(mensagem["content"])
+
 texto_usuario = st.chat_input("Digite sua mensagem")
-# arquivo_usuario = st.file_uploader("Envie um arquivo") # exemplo de upload de arquivo (não vamos usar nesse projeto)
-
-for mensagem in st.session_state["lista_mensagem"]: # percorre todas as mensagens salvas na lista de mensagens
-    role = mensagem["role"] # pega o papel (role) de cada mensagem
-    content = mensagem["content"] # pega o conteudo (content) de cada mensagem
-    st.chat_message(role).write(content)
-    # exibe cada mensagem na tela do app, usando o papel (role) e o conteudo (content) de cada mensagem
     
-
 if texto_usuario: # o if verifica se o usuario digitou algo, se essa variavel não está vazia
-    print(texto_usuario) # só é executado se a condição for verdadeira
     st.chat_message("user").write(texto_usuario) # exibe a mensagem do usuario na tela do app
     # podemos passar esse parâmetro de três formas: "user", "assistant", ou "nome personalizado"
-    mensagem_usuario = {"role": "user", "content": texto_usuario} # cria um dicionário com a mensagem do usuario
-    st.session_state["lista_mensagem"].append(mensagem_usuario) # adiciona a mensagem do usuario na lista de mensagens
+    st.session_state["lista_mensagem"].append(
+        {"role": "user", "content": texto_usuario}
+    )
 
     # ia respondeu
-    resposta_ia = "Você perguntou: " + texto_usuario + "?" # resposta temporária da IA
-    st.chat_message("assistant").write(resposta_ia) # exibe a resposta da IA na tela do app
-    mensagem_ia = {"role": "assistant", "content": resposta_ia} # cria um dicionário com a resposta da IA
-    st.session_state["lista_mensagem"].append(mensagem_ia) # adiciona a resposta da IA na lista de mensagens
+    historico = []
+    for msg in st.session_state["lista_mensagem"]:
+        historico.append({
+            "role": msg["role"],
+            "parts": [msg["content"]]
+        })
+
+    resposta = model.generate_content(historico)
+
+    texto_resposta = resposta.text
+
+    st.chat_message("assistant").write(texto_resposta)
+    st.session_state["lista_mensagem"].append(
+        {"role": "assistant", "content": texto_resposta}
+    )
 
 # print(st.session_state["lista_mensagem"]) # mostra no terminal todas as mensagens trocadas no chat
