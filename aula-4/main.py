@@ -22,6 +22,9 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # for model in genai.list_models():
@@ -61,9 +64,9 @@ if texto_usuario: # o if verifica se o usuario digitou algo, se essa variavel n√
 
     texto_resposta = resposta.text
 
-    st.chat_message("assistant").write(texto_resposta)
+    st.chat_message("model").write(texto_resposta)
     st.session_state["lista_mensagem"].append(
-        {"role": "assistant", "content": texto_resposta}
+        {"role": "model", "content": texto_resposta}
     )
 
 # print(st.session_state["lista_mensagem"]) # mostra no terminal todas as mensagens trocadas no chat
