@@ -101,7 +101,13 @@ Esses conceitos são a base para o funcionamento do chatbot.
 
 ## 🎥 Demonstração
 
-![ChatBot com IA](aula-3/demo.gif)
+![ChatBot com IA](aula-4/demo.gif)
+
+---
+
+O chat está funcionando online! Você pode testar no link abaixo:
+
+[💬 Acesse o Chat no Streamlit](https://leticiaavelar-jornada-python-aula-4.streamlit.app/)
 
 ---
 
