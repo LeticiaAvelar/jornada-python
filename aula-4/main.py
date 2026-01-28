@@ -21,6 +21,7 @@
 import streamlit as st
 import google.generativeai as genai
 import os
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -32,7 +33,8 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 model = genai.GenerativeModel("models/gemini-flash-latest")
 
-st.title("Fala que eu te escuto")
+st.title("🤖 Fala que eu te escuto")
+st.caption("Um chat simples em Python usando Streamlit e Gemini")
 
 # para poder rodar a aplicação, usamos o comando no terminal:
     # streamlit run main.py
@@ -42,6 +44,10 @@ if not "lista_mensagem" in st.session_state:
 
 for mensagem in st.session_state["lista_mensagem"]:
     st.chat_message(mensagem["role"]).write(mensagem["content"])
+
+if st.button("🗑️ Limpar conversa"):
+    st.session_state["lista_mensagem"] = []
+    st.rerun()
 
 texto_usuario = st.chat_input("Digite sua mensagem")
     
@@ -56,17 +62,25 @@ if texto_usuario: # o if verifica se o usuario digitou algo, se essa variavel n�
     historico = []
     for msg in st.session_state["lista_mensagem"]:
         historico.append({
-            "role": msg["role"],
+            "role": "model" if msg["role"] == "assistant" else msg["role"],
             "parts": [msg["content"]]
         })
 
-    resposta = model.generate_content(historico)
+    with st.chat_message("assistant"):
+        with st.spinner("Digitando..."):
+            resposta = model.generate_content(historico)
+            texto_resposta = resposta.text
 
-    texto_resposta = resposta.text
+        placeholder = st.empty()
+        texto_parcial = ""
 
-    st.chat_message("model").write(texto_resposta)
+        for caractere in texto_resposta:
+            texto_parcial += caractere
+            placeholder.markdown(texto_parcial)
+            time.sleep(0.01)
+
     st.session_state["lista_mensagem"].append(
-        {"role": "model", "content": texto_resposta}
+        {"role": "assistant", "content": texto_resposta}
     )
 
 # print(st.session_state["lista_mensagem"]) # mostra no terminal todas as mensagens trocadas no chat
