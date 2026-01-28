@@ -29,7 +29,7 @@ Neste projeto, realizei:
 - Implementação de input de mensagens do usuário
 - Exibição do histórico completo da conversa
 - Uso de listas e dicionários para estruturar mensagens
-- Integração com a API da OpenAI
+- Integração com a API do Gemini
 - Manutenção do estado da aplicação com `session_state`
 - Separação de código principal e código auxiliar para aprendizado
 
@@ -39,7 +39,7 @@ Neste projeto, realizei:
 
 - **Python**
 - **Streamlit** → frontend e backend do chat
-- **OpenAI API** → geração das respostas da IA
+- **Gemini API** → geração das respostas da IA
 - **Listas e dicionários** → estruturação das mensagens
 
 ---
@@ -101,7 +101,7 @@ Esses conceitos são a base para o funcionamento do chatbot.
 
 ## 🎥 Demonstração
 
-![ChatBot com IA](aula-4/demo.gif)
+![ChatBot com IA](demo.gif)
 
 ---
 
@@ -124,5 +124,5 @@ O chat está funcionando online! Você pode testar no link abaixo:
 - Integração de frontend e backend com Streamlit
 - Importância do histórico de mensagens para respostas coerentes
 - Uso prático de listas e dicionários em aplicações reais
-
 - Primeiros passos na criação de aplicações com IA em Python
+
