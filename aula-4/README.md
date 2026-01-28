@@ -1,6 +1,6 @@
 # 🤖 Jornada Python — Aula 4 | Criação de Chatbot com IA em Tempo Real
 
-Projeto desenvolvido durante a **Aula 4 da Jornada Python** do canal **Hashtag Treinamentos**, com foco na **criação de um chatbot com Inteligência Artificial**, utilizando **Streamlit** e a **API da OpenAI**.
+Projeto desenvolvido durante a **Aula 4 da Jornada Python** do canal **Hashtag Treinamentos**, com foco na **criação de um chatbot com Inteligência Artificial**, utilizando **Streamlit** e a **API do Gemini**.
 
 Nesta aula, o objetivo foi entender como funciona a lógica de um chat em tempo real, integrando frontend e backend em Python e mantendo o histórico da conversa com a IA.
 
@@ -124,4 +124,5 @@ O chat está funcionando online! Você pode testar no link abaixo:
 - Integração de frontend e backend com Streamlit
 - Importância do histórico de mensagens para respostas coerentes
 - Uso prático de listas e dicionários em aplicações reais
+
 - Primeiros passos na criação de aplicações com IA em Python
